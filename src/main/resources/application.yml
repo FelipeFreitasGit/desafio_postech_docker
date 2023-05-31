@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/LinguagemDB?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  profiles:
+    active: dev
+    jpa:
+      hibernate:
+        ddl-auto: update
+    jackson:
+      default-property-inclusion: non_ null
