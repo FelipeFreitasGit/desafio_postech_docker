@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_USER: felipe
+      MYSQL_PASSWORD: 123
+      MYSQL_DATABASE: LinguagemDB
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+    ports:
+      - 3306:3306
+    networks:
+      - network-linguagem
+  api:
+    image: felipefreitasdocker/app-desafio-postech:1.0
+    container_name: minha-api
+    restart: always
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE: LinguagemDB
+      DATABASE_USER: felipe
+      DATABASE_PASSWD: 123
+    ports:
+      - 8080:8080
+    networks:
+      - network-linguagem
+    depends_on:
+      - db
+networks:
+  network-linguagem:
+    driver: bridge
