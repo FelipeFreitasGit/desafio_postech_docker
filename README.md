@@ -8,7 +8,7 @@ Para startar o projeto siga os passos abaixos:
     
 Abra o navegador e entre em:
 
-    - http://localhost:8080/
+    - http://localhost:8080/linguagens
     
 Caso não estiver com o docker compose instalado em sua maquina, rodar os comandos abaixo
 
